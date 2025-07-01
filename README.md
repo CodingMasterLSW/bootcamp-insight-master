@@ -1,73 +1,130 @@
-# Welcome to your Lovable project
+Markdown
 
-## Project info
+---
 
-**URL**: https://lovable.dev/projects/54f2116e-4950-4dc1-89f2-9f728eebccbb
+## 💻 코딩 부트캠프 리뷰 서비스 README
 
-## How can I edit this code?
+이 문서는 **개발자 지망생 이성우 님**과 **부트캠프 수료자 이성우 님**의 입장에서, 코딩 부트캠프 리뷰 구현 범위를 설명합니다. 본 프로젝트는 실제 연동 없이 목업(Mocking) 데이터로 구현된 **프로토타입 수준**입니다.
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+### 📌 사용자
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/54f2116e-4950-4dc1-89f2-9f728eebccbb) and start prompting.
+| | |
+| --- | --- |
+| **정의** | 코딩 부트캠프에 대한 정보를 얻거나 리뷰를 작성하려는 사람 |
+| **겪고 있는 문제** |
+    * 개발자 부트캠프 선택 시 광고성 정보가 많아 신뢰할 수 있는 후기 찾기가 어렵습니다.
+    * 특정 부트캠프에 대한 실제 수료자들의 생생한 경험을 듣고 싶습니다.
+    * 자신이 수료한 부트캠프에 대한 솔직한 평가를 남길 기회가 부족합니다.
+    * 부트캠프 리뷰의 신뢰성을 확보하기 어렵습니다. |
+| **니즈** |
+    * 모든 부트캠프의 별점, 리뷰, 리뷰 수를 한곳에서 통합 확인하고 싶습니다.
+    * 관심 있는 부트캠프 수료자와 직접 대화하여 궁금증을 해소하고 싶습니다.
+    * 자신이 수료한 부트캠프에 대한 솔직하고 신뢰성 있는 리뷰를 작성하고 싶습니다.
+    * 리뷰 작성 시 신뢰성을 증명할 수 있는 인증 절차가 필요합니다. |
 
-Changes made via Lovable will be committed automatically to this repo.
+---
 
-**Use your preferred IDE**
+### 📌 페르소나
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+#### 개발자 지망생 - 이성우 (26세)
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+| | |
+| --- | --- |
+| **이름** | 이성우 |
+| **나이** | 26세 |
+| **목표** | 웹페이지에서 코딩 부트캠프 리스트의 별점과 리뷰를 참고하여 자신에게 맞는 부트캠프를 선정하는 것입니다. |
+| **니즈** |
+    * 부트캠프별로 신뢰할 수 있는 별점, 리뷰, 리뷰 수를 한눈에 확인하고 싶습니다.
+    * 궁금한 부트캠프의 수료자와 직접 1:1 채팅을 통해 실질적인 정보를 얻고 싶습니다. |
 
-Follow these steps:
+#### 부트캠프 수료자 - 이성우 (26세)
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+| | |
+| --- | --- |
+| **이름** | 이성우 |
+| **나이** | 26세 |
+| **목표** | 자신이 수료한 부트캠프에 대한 솔직한 리뷰를 작성하여 다른 개발자 지망생들에게 도움을 주고 싶습니다. 특히, 만족스럽지 않은 부트캠프에 대해서는 솔직한 의견을 제시하여 더 이상 다른 사람들이 잘못된 선택을 하지 않도록 돕고 싶습니다. |
+| **니즈** |
+    * 리뷰 작성을 위한 신뢰할 수 있는 인증 절차가 필요합니다.
+    * 수료증 제출을 통해 본인 인증 후, 해당 부트캠프에 대한 리뷰를 작성하고 싶습니다. |
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+### 📌 시나리오
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+#### **개발자 지망생 시나리오 1: 부트캠프 정보 확인 및 수료자와 대화**
 
-**Edit a file directly in GitHub**
+* **목표**: 부트캠프에 대한 리뷰, 별점을 확인하고, 수료자와 대화합니다.
+* **상황**: 비전공자인 이성우는 개발에 관심이 많아 부트캠프를 지원하려고 하지만, 후기를 찾아보니 광고성 글만 너무 많습니다. 그러던 중, '부캠마스터' 사이트에서 모든 부트캠프의 리뷰와 별점을 볼 수 있다는 것을 발견합니다.
+* **시나리오**:
+    * **이성우**는 '부캠마스터' 앱을 실행하여 메인 화면에서 부트캠프 리스트를 탐색합니다.
+    * 관심 있는 부트캠프를 선택하여 **별점, 리뷰, 리뷰 수**를 확인합니다.
+    * 해당 부트캠프에 대한 궁금증이 생겨 **`수료자와 대화하기`** 버튼을 누릅니다.
+    * **이성우**는 해당 부트캠프를 수료한 사람과 1:1 채팅을 통해 궁금한 점을 질문하고 답변을 받습니다.
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+#### **부트캠프 수료자 시나리오 1: 부트캠프 리뷰 작성**
 
-**Use GitHub Codespaces**
+* **목표**: 수료한 부트캠프에 대한 리뷰를 작성합니다.
+* **상황**: 부트캠프 수료를 마친 이성우는 자신이 다녔던 부트캠프가 너무 좋지 않아 더 이상 사람들이 지원하지 않았으면 합니다. 그러다가 '부캠마스터' 사이트에서 리뷰를 할 수 있다는 것을 알게 되어, 수료한 부트캠프에 대한 리뷰를 달기로 결심합니다.
+* **시나리오**:
+    * **이성우**는 '부캠마스터' 앱을 실행하고, 자신이 수료한 부트캠프의 리뷰 작성 페이지로 이동합니다.
+    * 리뷰를 작성하기 위해 **해당 부트캠프의 수료증을 제출**합니다.
+    * 수료증이 **인증**되면, **이성우**는 수료한 부트캠프에 대해 별점을 매기고 **솔직한 리뷰를 작성**합니다.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+---
 
-## What technologies are used for this project?
+### 📌 사용자 스토리와 인수 조건
 
-This project is built with:
+#### ✅ **요구사항 1: 부트캠프 정보(별점, 리뷰, 리뷰 수) 확인 기능**
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+* **사용자 스토리**:
+    * 나는 개발자 지망생으로서, 코딩 부트캠프를 선택하기 위해 각 부트캠프의 별점, 실제 리뷰, 그리고 전체 리뷰 수를 한눈에 확인하고 싶다.
+* **인수 조건**:
+    * **Given**: 사용자가 '부캠마스터' 웹사이트에 접속합니다.
+    * **When**: 사용자가 부트캠프 목록이나 특정 부트캠프 상세 페이지를 조회합니다.
+    * **Then**: 각 부트캠프에 대한 **별점, 실제 수료자가 작성한 리뷰 내용, 그리고 총 리뷰 수**를 확인할 수 있습니다.
 
-## How can I deploy this project?
+---
 
-Simply open [Lovable](https://lovable.dev/projects/54f2116e-4950-4dc1-89f2-9f728eebccbb) and click on Share -> Publish.
+#### ✅ **요구사항 2: 수료자와 1:1 채팅 기능**
 
-## Can I connect a custom domain to my Lovable project?
+* **사용자 스토리**:
+    * 나는 개발자 지망생으로서, 관심 있는 부트캠프에 대해 더 깊이 있는 정보를 얻기 위해 해당 부트캠프 수료자와 직접 1:1로 대화하고 싶다.
+* **인수 조건**:
+    * **Given**: 사용자가 부트캠프 상세 페이지에서 **`수료자와 대화하기`** 버튼을 확인합니다.
+    * **When**: 사용자가 **`수료자와 대화하기`** 버튼을 클릭합니다.
+    * **Then**: 해당 부트캠프를 수료한 사람과 **1:1 채팅을 시작할 수 있는 화면**이 표시됩니다. (Mocking 데이터 기반)
 
-Yes, you can!
+---
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+#### ✅ **요구사항 3: 수료증 기반 리뷰 작성 인증 기능**
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+* **사용자 스토리**:
+    * 나는 부트캠프 수료자로서, 내가 다닌 부트캠프에 대한 리뷰를 작성하기 전에 나의 수료 여부를 투명하게 인증하고 싶다.
+* **인수 조건**:
+    * **Given**: 사용자가 '부캠마스터' 웹사이트에 접속하여 리뷰 작성 페이지로 이동합니다.
+    * **When**: 사용자가 리뷰를 작성하기 위해 **수료증 이미지를 제출**합니다.
+    * **Then**: 시스템은 제출된 수료증을 **인증**하고, 인증이 완료되면 해당 부트캠프에 대한 **리뷰를 작성할 수 있는 권한**이 부여됩니다. (Mocking 데이터 기반)
+
+---
+
+#### ✅ **요구사항 4: 부트캠프 리뷰 작성 기능**
+
+* **사용자 스토리**:
+    * 나는 부트캠프 수료자로서, 수료증 인증을 완료한 후 내가 경험한 부트캠프에 대한 별점과 상세한 리뷰를 작성하고 싶다.
+* **인수 조건**:
+    * **Given**: 사용자가 수료증 인증을 성공적으로 완료하여 리뷰 작성 권한을 얻었습니다.
+    * **When**: 사용자가 해당 부트캠프의 리뷰 작성 화면에서 별점을 선택하고 리뷰 내용을 입력합니다.
+    * **Then**: 작성된 **별점과 리뷰가 해당 부트캠프 정보에 반영**되어 다른 사용자들이 볼 수 있도록 게시됩니다. (Mocking 데이터 기반)
+
+---
+
+### 구현 범위
+
+* 앱의 UI/UX와 기본적인 화면을 보여주는 **프로토타입 수준**으로 구현합니다.
+* **실제 연동 없이 목업(Mocking) 데이터**를 활용하여 부트캠프 정보 조회, 1:1 채팅 시작 흐름, 수료증 인증 및 리뷰 작성 흐름을 시뮬레이션합니다.
+* 사용자 플로우에 대해 미리 정의된 응답 패턴을 활용합니다.
+
+---
