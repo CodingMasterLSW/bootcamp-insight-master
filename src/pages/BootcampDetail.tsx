@@ -1,11 +1,10 @@
-
 import { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { Star, MessageCircle, ArrowLeft, Users, Clock, DollarSign } from "lucide-react";
+import { Star, MessageCircle, ArrowLeft, Users, Clock, DollarSign, PenTool } from "lucide-react";
 
 interface Review {
   id: number;
@@ -108,6 +107,10 @@ const BootcampDetail = () => {
     setShowChat(true);
   };
 
+  const handleWriteReview = () => {
+    navigate(`/bootcamp/${id}/write-review`);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-100">
       {/* Header */}
@@ -163,13 +166,23 @@ const BootcampDetail = () => {
                     <MessageCircle size={14} />
                     <span>{bootcamp.reviewCount}개 리뷰</span>
                   </div>
-                  <Button 
-                    onClick={handleChatStart}
-                    className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white border-0"
-                  >
-                    <Users size={16} className="mr-2" />
-                    수료자와 대화하기
-                  </Button>
+                  <div className="flex gap-2">
+                    <Button 
+                      onClick={handleWriteReview}
+                      variant="outline"
+                      className="border-purple-300 text-purple-700 hover:bg-purple-50"
+                    >
+                      <PenTool size={16} className="mr-2" />
+                      리뷰 작성하기
+                    </Button>
+                    <Button 
+                      onClick={handleChatStart}
+                      className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-purple-600 hover:to-blue-600 text-white border-0"
+                    >
+                      <Users size={16} className="mr-2" />
+                      수료자와 대화하기
+                    </Button>
+                  </div>
                 </div>
               </div>
             </CardHeader>
