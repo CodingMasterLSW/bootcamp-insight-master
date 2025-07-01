@@ -1,4 +1,4 @@
-Markdown
+[배포 링크](bootcamp-insight-pilot.lovable.app)
 
 ---
 
