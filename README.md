@@ -1,4 +1,4 @@
-[배포 링크](bootcamp-insight-pilot.lovable.app)
+[배포 링크](https://bootcamp-insight-pilot.lovable.app/)
 
 ---
 
